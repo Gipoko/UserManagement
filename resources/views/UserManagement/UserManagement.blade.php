@@ -25,7 +25,7 @@
                        </tbody>
                     </table>
                     
-                    @include('dashboard.UserManagement.UserMmodal')
+                    @include('UserManagement.UserMmodal')
                 </div>
             </div>
         </div>

@@ -22,14 +22,14 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="exampleInputEmail1">User ID</label>
-                    <input type="text" class="form-control" id="user_id" aria-describedby="emailHelp" placeholder="">
+                    <input type="text" class="form-control" id="user_id" aria-describedby="" placeholder="">
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Name</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="">
+                    <input type="text" class="form-control" id="name" aria-describedby="" placeholder="">
                 </div>
             </div>
 

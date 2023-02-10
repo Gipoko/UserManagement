@@ -41,7 +41,7 @@ class UserManagementController extends Controller
         }
       
 
-        return view('dashboard/UserManagement/UserManagement',compact('UserM'));
+        return view('UserManagement/UserManagement',compact('UserM'));
     }
 
     /**
@@ -55,4 +55,10 @@ class UserManagementController extends Controller
         $userM = UserManagement::find($id);
         return response()->json($userM);
     }
+
+    // DB::table('users AS us')
+    //         ->leftJoin('role_user AS rol_s', 'us.id', '=', 'rol_s.user_id')
+    //         ->leftJoin('roles AS rol','rol_s.role_id','=','rol.id')
+    //         ->select('us.*','us.id' ,'us.name', 'rol.display_name')
+    //         ->find($id);
 }

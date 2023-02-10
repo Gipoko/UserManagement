@@ -38,6 +38,8 @@ $('body').on('click', '.editUser', function () {
         ModalTitle.html("Edit User");
         BtnUser.html("Save Changes");
         $('#user_id').val(data.id);
+        $('name').val(data.name);
+        $('user_role').val(data.display_name);
         
     })
  });
