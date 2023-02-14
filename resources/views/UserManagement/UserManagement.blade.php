@@ -25,10 +25,10 @@
                        </tbody>
                     </table>
                     
-                    @include('UserManagement.UserMmodal')
+                   
                 </div>
             </div>
         </div>
     </div>
-
+    @include('UserManagement.UserMmodal')
 </x-app-layout>

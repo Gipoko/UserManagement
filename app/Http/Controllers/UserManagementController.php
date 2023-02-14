@@ -52,13 +52,23 @@ class UserManagementController extends Controller
      */
     public function edit($id)
     {
-        $userM = UserManagement::find($id);
+        $userM =DB::table('users')
+        ->leftJoin('role_user', 'users.id', '=', 'role_user.user_id')
+  
+        ->find($id);
         return response()->json($userM);
     }
 
-    // DB::table('users AS us')
-    //         ->leftJoin('role_user AS rol_s', 'us.id', '=', 'rol_s.user_id')
-    //         ->leftJoin('roles AS rol','rol_s.role_id','=','rol.id')
-    //         ->select('us.*','us.id' ,'us.name', 'rol.display_name')
-    //         ->find($id);
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\UserManagement  $about
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        UserManagement::find($id)->delete();
+     
+        return response()->json(['success'=>'User deleted successfully.']);
+    }
 }

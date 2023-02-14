@@ -1,3 +1,4 @@
+
 <!-- Button trigger modal -->
 <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Launch demo modal
@@ -33,6 +34,13 @@
                 </div>
             </div>
 
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Role</label>
+                    <input type="text" class="form-control" id="role_id" aria-describedby="" placeholder="">
+                </div>
+            </div>
+
         </div>
        </div>
         
@@ -41,8 +49,8 @@
 
       </div>
       <div class="modal-footer">
-        <button type="" class="btn btn-secondary " data-dismiss="modal">Close</button>
-        <button type="" class="btn btn-primary BtnUser">Save changes</button>
+        <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary BtnUser">Save changes</button>
       </div>
       </form>
     </div>

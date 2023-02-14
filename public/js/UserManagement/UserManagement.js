@@ -38,9 +38,31 @@ $('body').on('click', '.editUser', function () {
         ModalTitle.html("Edit User");
         BtnUser.html("Save Changes");
         $('#user_id').val(data.id);
-        $('name').val(data.name);
-        $('user_role').val(data.display_name);
+        $('#name').val(data.name);
+        $('#role_id').val(data.role_id);
         
     })
  });
+
+ $('body').on('click', '.deleteUser', function () {
+     
+    var id = $(this).data('user_id');
+    confirm("Are You sure want to delete !");
+  
+    if(confirm() == true){
+        $.ajax({
+            type: "DELETE",
+            url: "/UserM"+'/'+id ,
+            success: function (data) {
+                table.draw();
+            },
+            error: function (data) {
+                console.log('Error:', data);
+            }
+        });
+        return false;
+    }else{
+        return false;
+    } 
+});
 });
