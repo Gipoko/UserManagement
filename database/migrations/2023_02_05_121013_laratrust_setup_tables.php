@@ -36,10 +36,11 @@ class LaratrustSetupTables extends Migration
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('user_id');
             $table->string('user_type');
-
+            $table->timestamps(); // Add timestamps() to create 'created_at' and 'updated_at' columns
+        
             $table->foreign('role_id')->references('id')->on('roles')
                 ->onUpdate('cascade')->onDelete('cascade');
-
+        
             $table->primary(['user_id', 'role_id', 'user_type']);
         });
 

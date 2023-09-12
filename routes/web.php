@@ -26,6 +26,9 @@ Route::get('/', function () {
 //auth route for both 
 Route::group(['middleware' => ['auth']], function() { 
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+
+    Route::get('/usermanagement', 'App\Http\Controllers\UserManagementController@Index')->name('usermanagement');
+    Route::resource('UserM', UserManagementController::class);
 });
 
 // for superadministrator

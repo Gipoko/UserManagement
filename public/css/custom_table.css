@@ -1,0 +1,24 @@
+/* Style the search input field */
+.dataTables_filter input {
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+/* Style the pagination buttons */
+.dataTables_paginate .pagination {
+    justify-content: center;
+}
+
+/* Style the pagination buttons individually */
+.dataTables_paginate .page-item {
+    margin-right: 4px;
+}
+
+/* Style the active pagination button */
+.dataTables_paginate .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
