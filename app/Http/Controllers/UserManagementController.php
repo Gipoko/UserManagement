@@ -20,14 +20,21 @@ class UserManagementController extends Controller
      */
     public function Index(Request $request)
     {
+        $search = $request->input('search.value');
          $UserM = UserManagement::latest()->get();
         
         if ($request->ajax()) {
-            $UserM = DB::table('users')
-            ->leftJoin('role_user', 'users.id', '=', 'role_user.user_id')
-            ->leftJoin('roles','role_user.role_id','=','roles.id')
-            ->select('users.*', 'users.name', 'roles.display_name')
-            ->get();
+           
+                $UserM = DB::table('users')
+                ->leftJoin('role_user', 'users.id', '=', 'role_user.user_id')
+                ->leftJoin('roles', 'role_user.role_id', '=', 'roles.id')
+                ->select('users.*', 'users.name', 'roles.display_name')
+                ->where(function ($query) use ($search) {
+                    $query->where('users.name', 'like', '%' . $search . '%')
+                        ->orWhere('users.email', 'like', '%' . $search . '%')
+                        ->orWhere('roles.display_name', 'like', '%' . $search . '%');
+                })
+                ->get();
             return Datatables::of($UserM)
                     ->addIndexColumn()
                     ->addColumn('action', function($row) {
