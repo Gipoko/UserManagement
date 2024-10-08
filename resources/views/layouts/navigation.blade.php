@@ -20,7 +20,7 @@
                 @if (Auth::user()->hasRole('superadministrator'))
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('usermanagement')" :active="request()->routeIs('usermanagement')">
-                        {{ __('Users') }}
+                        {{ __('Usersss') }}
                     </x-nav-link>
                 </div>
                 @endif
